@@ -1,0 +1,152 @@
+/* style.css - GameHub */
+
+/* Reset básico */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+}
+
+/* Body */
+body {
+    background-color: #f0f2f5;
+    color: #333;
+}
+
+/* Header */
+header {
+    background-color: #1e1e2f;
+    color: #fff;
+    padding: 1rem;
+    text-align: center;
+}
+
+header h1 {
+    font-size: 1.8rem;
+}
+
+/* Main container */
+.main-container {
+    max-width: 1200px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+/* Search input */
+.search-input {
+    width: 100%;
+    padding: 0.6rem 1rem;
+    margin-bottom: 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+}
+
+/* Select de ordenación */
+.sort-select {
+    padding: 0.5rem 1rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    font-size: 1rem;
+    margin-bottom: 1rem;
+}
+
+/* Game List container */
+#games-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+    gap: 1rem;
+}
+
+/* Game Card */
+.game-card {
+    background-color: #fff;
+    border-radius: 12px;
+    box-shadow: 0 3px 8px rgba(0,0,0,0.1);
+    overflow: hidden;
+    cursor: pointer;
+    transition: transform 0.2s, box-shadow 0.2s;
+    position: relative;
+}
+
+.game-card:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 6px 12px rgba(0,0,0,0.15);
+}
+
+/* Jugado - difumina la tarjeta */
+.game-played {
+    opacity: 0.5;
+}
+
+/* Cover image */
+.game-cover {
+    width: 100%;
+    height: 280px;
+    object-fit: cover;
+}
+
+/* Info container */
+.game-info {
+    padding: 0.8rem 1rem;
+}
+
+.game-title {
+    font-size: 1.1rem;
+    font-weight: bold;
+    margin-bottom: 0.3rem;
+}
+
+.game-platform,
+.game-genre,
+.game-release {
+    font-size: 0.9rem;
+    color: #555;
+    margin-bottom: 0.2rem;
+}
+
+/* Rating */
+.game-rating {
+    font-size: 0.9rem;
+    font-weight: bold;
+    margin-top: 0.5rem;
+    color: #f39c12;
+}
+
+/* Mensaje de "no hay resultados" */
+.no-results {
+    grid-column: 1 / -1;
+    text-align: center;
+    font-size: 1.2rem;
+    color: #777;
+    padding: 2rem 0;
+}
+
+/* Botones de categoría (opcional si quieres filtrar por género) */
+.category-btn {
+    padding: 0.5rem 1rem;
+    margin: 0.2rem;
+    border-radius: 8px;
+    border: 1px solid #ccc;
+    background-color: #fff;
+    cursor: pointer;
+    transition: background-color 0.2s, color 0.2s;
+}
+
+.category-btn:hover {
+    background-color: #1e1e2f;
+    color: #fff;
+}
+
+.category-btn.active {
+    background-color: #1e1e2f;
+    color: #fff;
+}
+
+/* Bonus: animación de eliminación */
+.game-card.removing {
+    opacity: 0;
+    transform: scale(0.9);
+    transition: all 0.3s ease;
+}
